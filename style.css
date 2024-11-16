@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* border: 1px solid red; */
+}
+/* root */
+:root {
+  --primary-color: #0c5e69;
+  --secondary-color: #d1c000;
+  /* button */
+  --background: #ff5b5b;
+  /* hover */
+  /* text */
+  --text-white: #fff;
+}
+/* general */
+h1 {
+  color: var(--primary-color);
+}
+/*----------------------- formulaire -----------------------*/
+.logo {
+  height: 150px;
+}
+#title {
+  position: relative;
+  bottom: 55px;
+}
+select {
+  width: 20px;
+  border: none;
+  cursor: pointer;
+}
+label {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+.btn-active {
+  padding: 10px;
+  border-radius: 10px;
+  background: var(--primary-color);
+  color: var(--text-white);
+  border: none;
+}
