@@ -18,6 +18,9 @@ h1 {
   color: var(--primary-color);
 }
 /*----------------------- formulaire -----------------------*/
+/* body {
+  background: #212121;
+} */
 .logo {
   height: 150px;
 }
