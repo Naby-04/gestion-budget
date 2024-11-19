@@ -31,5 +31,339 @@
     <link rel="stylesheet" href="style.css" />
     <title>page d'accueil gestion-budget</title>
   </head>
-  <body></body>
+  <body>
+    <div class="container-fluid">
+      <div class="d-flex flex-column align-items-center">
+        <img src="images/Frame_2_1.png" alt="logo" class="img-fluid logo" />
+        <span id="title">Gestion du budget</span>
+      </div>
+      <!-- cartes budgets -->
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-3 p-4">
+          <div class="border shadow">
+            <h3 class="budget-name rounded-top-3 p-2 text-center">REVENUE</h3>
+            <p id="revenu-price" class="text-center fs-5">100000</p>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 p-4">
+          <div class="border shadow">
+            <h3 class="budget-name rounded-top-3 p-2 text-center">DÉPENSE</h3>
+            <p id="dépense-price" class="text-center fs-5">100000</p>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 p-4">
+          <div class="border shadow">
+            <h3 class="budget-name rounded-top-3 p-2 text-center">SOLDE</h3>
+            <p id="solde-price" class="text-center fs-5">100000</p>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 p-4">
+          <div class="border shadow">
+            <h3 class="budget-name rounded-top-3 p-2 text-center">ÉPARGNE</h3>
+            <p id="epargne-price" class="text-center fs-5">100000</p>
+          </div>
+        </div>
+      </div>
+      <!-- cartes budgets exit -->
+      <div class="budget-table container">
+        <!---------------- table dépense ---------------->
+        <h2 class="mt-5">Liste des dépense</h2>
+        <table class="affichage_tableau_depense mt-3 mx-auto">
+          <thead>
+            <th>TITRE</th>
+            <th>MONTANT</th>
+            <th>ACTIONS</th>
+          </thead>
+          <tbody id="depense-table-body">
+            <!-- Les lignes de données vont être insérées ici par JavaScript -->
+            <tr>
+              <td>Nouriture</td>
+              <td>400000</td>
+              <td class="d-flex justify-content-around">
+                <button
+                  id="supp-btn"
+                  class="p-2 rounded-3 bg-danger text-light"
+                >
+                  supprimer
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <!-- Button trigger modal -->
+                <button
+                  type="button"
+                  class="btn"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                >
+                  AJOUTER DÉPENSE
+                  <i class="fa-solid fa-plus ms-2"></i>
+                </button>
+
+                <!-- Modal -->
+                <div
+                  class="modal fade"
+                  id="exampleModal"
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">
+                          AJOUTER DÉPENSE
+                        </h1>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">
+                        <!-- partie formulaire -->
+                        <form id="formulaire">
+                          <div class="mb-3">
+                            <div class="d-flex">
+                              <label for="titre" class="form-label me-2"
+                                >TITRE</label
+                              >
+                              <select name="depense-titre" id="depense-titre">
+                                <option value="">Clear(ne rien mettre)</option>
+                                <option value="Loyer">Loyer</option>
+                                <option value="Factures">
+                                  Factures (électricité, eau, internet, etc.)
+                                </option>
+                                <option value="Courses">
+                                  Courses alimentaires
+                                </option>
+                                <option value="Transport">Transport</option>
+                                <option value="Santé">
+                                  Santé (médicaments, consultations)
+                                </option>
+                                <option value="Éducation">
+                                  Éducation (frais de scolarité, livres)
+                                </option>
+                                <option value="Loisirs">
+                                  Loisirs (cinéma, sorties)
+                                </option>
+                                <option value="Shopping">
+                                  Shopping (vêtements, accessoires)
+                                </option>
+                                <option value="Épargne">Épargne</option>
+                                <option value="Dettes">
+                                  Remboursement de dettes
+                                </option>
+                                <option value="Donations">
+                                  Donations ou charité
+                                </option>
+                                <option value="Autre">Autre</option>
+                              </select>
+                            </div>
+
+                            <input
+                              type="text"
+                              class="form-control p-3"
+                              id="titre-input"
+                              required
+                            />
+                          </div>
+                          <div class="mb-5 text-start">
+                            <label for="montant" class="form-label"
+                              >MONTANT</label
+                            >
+                            <input
+                              type="number"
+                              class="form-control p-3"
+                              id="montant"
+                              required
+                            />
+                          </div>
+                        </form>
+                        <!-- partie formulaire exit -->
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-active"
+                          data-bs-dismiss="modal"
+                        >
+                          Submit
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+        <!---------------- table revenus ---------------->
+        <h2 class="mt-5">Liste des revenus</h2>
+        <table class="affichage_tableau_revenue mt-3 mb-5 mx-auto">
+          <thead>
+            <th>TITRE</th>
+            <th>MONTANT</th>
+            <th>ACTIONS</th>
+          </thead>
+          <tbody id="revenu-table-body">
+            <!-- Les lignes de données vont être insérées ici par JavaScript -->
+            <tr>
+              <td>Salaire</td>
+              <td>400000</td>
+              <td class="d-flex justify-content-around">
+                <button
+                  id="supp-btn"
+                  class="p-2 rounded-3 bg-danger text-light"
+                >
+                  supprimer
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <!-- Button trigger modal -->
+                <button
+                  type="button"
+                  class="btn"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                >
+                  AJOUTER REVENU
+                  <i class="fa-solid fa-plus ms-2"></i>
+                </button>
+
+                <!-- Modal -->
+                <div
+                  class="modal fade"
+                  id="exampleModal"
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">
+                          AJOUTER REVENU
+                        </h1>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">
+                        <!-- partie formulaire -->
+                        <form id="formulaire">
+                          <div class="mb-3">
+                            <div class="d-flex">
+                              <label for="titre" class="form-label me-2"
+                                >TITRE</label
+                              >
+                              <select name="revenu-titre" id="revenu-titre">
+                                <option value=""></option>
+                                <option value="Salaire">Salaire</option>
+                                <option value="Bonus">Bonus</option>
+                                <option value="RevenusLocatifs">
+                                  Revenus Locatifs
+                                </option>
+                                <option value="Dividendes">Dividendes</option>
+                                <option value="Intérêts">
+                                  Intérêts Bancaires
+                                </option>
+                                <option value="RevenusFreelance">
+                                  Revenus Freelance
+                                </option>
+                                <option value="Pension">Pension</option>
+                                <option value="Allocation">Allocations</option>
+                                <option value="RevenusInvestissements">
+                                  Revenus d'Investissements
+                                </option>
+                                <option value="Remboursement">
+                                  Remboursements
+                                </option>
+                                <option value="Autre">Autre</option>
+                              </select>
+                              <select name="depense-titre" id="depense-titre">
+                                <option value="">Clear(ne rien mettre)</option>
+                                <option value="Loyer">Loyer</option>
+                                <option value="Factures">
+                                  Factures (électricité, eau, internet, etc.)
+                                </option>
+                                <option value="Courses">
+                                  Courses alimentaires
+                                </option>
+                                <option value="Transport">Transport</option>
+                                <option value="Santé">
+                                  Santé (médicaments, consultations)
+                                </option>
+                                <option value="Éducation">
+                                  Éducation (frais de scolarité, livres)
+                                </option>
+                                <option value="Loisirs">
+                                  Loisirs (cinéma, sorties)
+                                </option>
+                                <option value="Shopping">
+                                  Shopping (vêtements, accessoires)
+                                </option>
+                                <option value="Épargne">Épargne</option>
+                                <option value="Dettes">
+                                  Remboursement de dettes
+                                </option>
+                                <option value="Donations">
+                                  Donations ou charité
+                                </option>
+                                <option value="Autre">Autre</option>
+                              </select>
+                            </div>
+
+                            <input
+                              type="text"
+                              class="form-control p-3"
+                              id="titre-input"
+                              required
+                            />
+                          </div>
+                          <div class="mb-5 text-start">
+                            <label for="montant" class="form-label"
+                              >MONTANT</label
+                            >
+                            <input
+                              type="number"
+                              class="form-control p-3"
+                              id="montant"
+                              required
+                            />
+                          </div>
+                        </form>
+                        <!-- partie formulaire exit -->
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-active">
+                          Submit
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- depense tableau -->
+      <!-- depense tableau exit -->
+      <!-- revenue tableau -->
+      <!-- revenue tableau exit -->
+    </div>
+  </body>
+  <script src="main.js"></script>
 </html>
