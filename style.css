@@ -95,6 +95,10 @@ tbody tr:hover {
   background: var(--primary-color) !important;
   color: var(--text-white);
 }
+tbody tr:hover .btn-active {
+  background: var(--text-white);
+  color: var(--primary-color);
+}
 i {
   color: var(--secondary-color);
   border: 1px solid var(--secondary-color);

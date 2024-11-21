@@ -17,12 +17,6 @@ const Form = document.getElementById("formulaire");
 const depenseTableau = document.getElementById("depense-table-body");
 const revenuTableau = document.getElementById("revenu-table-body");
 
-// initialisation
-// if (selectedDepenseTitre && selectedRevenueTitre) {
-//   selectedDepenseTitre.style.display = "none";
-//   selectedRevenueTitre.style.display = "none";
-// }
-
 // fonction pour changement de contexte
 if (addRevenu && contextName && selectedRevenueTitre && selectedDepenseTitre) {
   addRevenu.addEventListener("click", function () {
@@ -38,30 +32,6 @@ if (addDepense && contextName && selectedRevenueTitre && selectedDepenseTitre) {
     selectedRevenueTitre.style.display = "none";
   });
 }
-
-// if (selectedContext) {
-//   selectedRevenueTitre.style.display = "none";
-//   selectedContext.addEventListener("change", function () {
-//     // Récupération de la valeur du select
-//     contextName.textContent = selectedContext.value;
-//     // gestion contexte
-//     if (
-//       selectedContext.value == "DÉPENSE" &&
-//       selectedDepenseTitre &&
-//       selectedRevenueTitre
-//     ) {
-//       selectedDepenseTitre.style.display = "block";
-//       selectedRevenueTitre.style.display = "none";
-//     } else if (
-//       selectedContext.value == "REVENUE" &&
-//       selectedDepenseTitre &&
-//       selectedRevenueTitre
-//     ) {
-//       selectedDepenseTitre.style.display = "none";
-//       selectedRevenueTitre.style.display = "block";
-//     }
-//   });
-// }
 
 // fonction pour changement de titre
 if (selectedRevenueTitre && titreInput) {

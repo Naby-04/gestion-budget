@@ -66,7 +66,7 @@
       </div>
       <!-- cartes budgets exit -->
       <div class="budget-table container">
-        <!---------------- table dépense ---------------->
+        <!------------------------------------------------- table dépense ------------------------------------------------->
         <h2 class="mt-5">Liste des dépense</h2>
         <table class="affichage_tableau_depense mt-3 mx-auto">
           <thead>
@@ -93,9 +93,9 @@
                 <!-- Button trigger modal -->
                 <button
                   type="button"
-                  class="btn"
+                  class="btn-active"
                   data-bs-toggle="modal"
-                  data-bs-target="#exampleModal"
+                  data-bs-target="#depenseModal"
                 >
                   AJOUTER DÉPENSE
                   <i class="fa-solid fa-plus ms-2"></i>
@@ -104,15 +104,15 @@
                 <!-- Modal -->
                 <div
                   class="modal fade"
-                  id="exampleModal"
+                  id="depenseModal"
                   tabindex="-1"
-                  aria-labelledby="exampleModalLabel"
+                  aria-labelledby="depenseModalLabel"
                   aria-hidden="true"
                 >
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">
+                        <h1 class="modal-title fs-5" id="depenseModalLabel">
                           AJOUTER DÉPENSE
                         </h1>
                         <button
@@ -124,14 +124,16 @@
                       </div>
                       <div class="modal-body">
                         <!-- partie formulaire -->
-                        <form id="formulaire">
+                        <form id="depenseFormulaire">
                           <div class="mb-3">
                             <div class="d-flex">
-                              <label for="titre" class="form-label me-2"
+                              <label
+                                for="depense-titre-input"
+                                class="form-label me-2"
                                 >TITRE</label
                               >
                               <select name="depense-titre" id="depense-titre">
-                                <option value="">Clear(ne rien mettre)</option>
+                                <option value=""></option>
                                 <option value="Loyer">Loyer</option>
                                 <option value="Factures">
                                   Factures (électricité, eau, internet, etc.)
@@ -166,18 +168,18 @@
                             <input
                               type="text"
                               class="form-control p-3"
-                              id="titre-input"
+                              id="depense-titre-input"
                               required
                             />
                           </div>
                           <div class="mb-5 text-start">
-                            <label for="montant" class="form-label"
+                            <label for="depenseMontant" class="form-label"
                               >MONTANT</label
                             >
                             <input
                               type="number"
                               class="form-control p-3"
-                              id="montant"
+                              id="depenseMontant"
                               required
                             />
                           </div>
@@ -202,7 +204,7 @@
             </tr>
           </tbody>
         </table>
-        <!---------------- table revenus ---------------->
+        <!--------------------------------------------- table revenus --------------------------------------------->
         <h2 class="mt-5">Liste des revenus</h2>
         <table class="affichage_tableau_revenue mt-3 mb-5 mx-auto">
           <thead>
@@ -229,9 +231,9 @@
                 <!-- Button trigger modal -->
                 <button
                   type="button"
-                  class="btn"
+                  class="btn-active"
                   data-bs-toggle="modal"
-                  data-bs-target="#exampleModal"
+                  data-bs-target="#revenuModal"
                 >
                   AJOUTER REVENU
                   <i class="fa-solid fa-plus ms-2"></i>
@@ -240,15 +242,15 @@
                 <!-- Modal -->
                 <div
                   class="modal fade"
-                  id="exampleModal"
+                  id="revenuModal"
                   tabindex="-1"
-                  aria-labelledby="exampleModalLabel"
+                  aria-labelledby="revenuModalLabel"
                   aria-hidden="true"
                 >
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">
+                        <h1 class="modal-title fs-5" id="revenuModalLabel">
                           AJOUTER REVENU
                         </h1>
                         <button
@@ -260,10 +262,10 @@
                       </div>
                       <div class="modal-body">
                         <!-- partie formulaire -->
-                        <form id="formulaire">
+                        <form id="revenuFormulaire">
                           <div class="mb-3">
                             <div class="d-flex">
-                              <label for="titre" class="form-label me-2"
+                              <label for="revenu-titre" class="form-label me-2"
                                 >TITRE</label
                               >
                               <select name="revenu-titre" id="revenu-titre">
