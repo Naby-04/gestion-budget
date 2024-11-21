@@ -1,10 +1,32 @@
 // declaration des variables
 // --------------------------PRESENTATION
 const contextName = document.getElementById("contexte-name");
+// -------------------------------------------------------------------------gestion depense
 const selectedDepenseTitre = document.getElementById("depense-titre");
-const selectedRevenueTitre = document.getElementById("revenu-titre");
-const titreInput = document.getElementById("titre-input");
-const montantinput = document.getElementById("montant");
+const depenseTitreInput = document.getElementById("depense-titre-input");
+const depenseMontantinput = document.getElementById("depenseMontant");
+
+// fonction pour changement de titre
+if (selectedDepenseTitre && depenseTitreInput) {
+  selectedDepenseTitre.addEventListener("change", function () {
+    // Récupération de la valeur du select
+    depenseTitreInput.value = selectedDepenseTitre.value || "";
+  });
+} else {
+  console.log("impossible");
+}
+// -------------------------------------------------------------------------gestion revenu
+const revenuTitreInput = document.getElementById("revenu-titre-input");
+const selectedRevenuTitre = document.getElementById("revenu-titre");
+const revenuMontantinput = document.getElementById("revenuMontant");
+
+// fonction pour changement de titre
+if (selectedRevenuTitre && revenuTitreInput) {
+  selectedRevenuTitre.addEventListener("change", function () {
+    // Récupération de la valeur du select
+    revenuTitreInput.value = selectedRevenuTitre.value || "";
+  });
+}
 // --------------------------CALCUL
 const addRevenu = document.getElementById("add-revenue");
 const addDepense = document.getElementById("add-depense");
@@ -16,36 +38,7 @@ const epargne = document.getElementById("epargne-price");
 const Form = document.getElementById("formulaire");
 const depenseTableau = document.getElementById("depense-table-body");
 const revenuTableau = document.getElementById("revenu-table-body");
-
-// fonction pour changement de contexte
-if (addRevenu && contextName && selectedRevenueTitre && selectedDepenseTitre) {
-  addRevenu.addEventListener("click", function () {
-    contextName.textContent = "REVENU";
-    selectedDepenseTitre.style.display = "none";
-    selectedRevenueTitre.style.display = "block";
-  });
-}
-if (addDepense && contextName && selectedRevenueTitre && selectedDepenseTitre) {
-  addDepense.addEventListener("click", function (e) {
-    contextName.textContent = "DÉPENSE";
-    selectedDepenseTitre.style.display = "block";
-    selectedRevenueTitre.style.display = "none";
-  });
-}
-
-// fonction pour changement de titre
-if (selectedRevenueTitre && titreInput) {
-  selectedRevenueTitre.addEventListener("change", function () {
-    // Récupération de la valeur du select
-    titreInput.value = selectedRevenueTitre.value || "";
-  });
-}
-if (selectedDepenseTitre && titreInput) {
-  selectedDepenseTitre.addEventListener("change", function () {
-    // Récupération de la valeur du select
-    titreInput.value = selectedDepenseTitre.value || "";
-  });
-}
+// ---------------------------------------------------------------------------
 
 // gestion rapport budget
 function calculSolde(revenu, depense) {

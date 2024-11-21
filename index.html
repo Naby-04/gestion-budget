@@ -265,7 +265,9 @@
                         <form id="revenuFormulaire">
                           <div class="mb-3">
                             <div class="d-flex">
-                              <label for="revenu-titre" class="form-label me-2"
+                              <label
+                                for="revenu-titre-input"
+                                class="form-label me-2"
                                 >TITRE</label
                               >
                               <select name="revenu-titre" id="revenu-titre">
@@ -292,54 +294,23 @@
                                 </option>
                                 <option value="Autre">Autre</option>
                               </select>
-                              <select name="depense-titre" id="depense-titre">
-                                <option value="">Clear(ne rien mettre)</option>
-                                <option value="Loyer">Loyer</option>
-                                <option value="Factures">
-                                  Factures (électricité, eau, internet, etc.)
-                                </option>
-                                <option value="Courses">
-                                  Courses alimentaires
-                                </option>
-                                <option value="Transport">Transport</option>
-                                <option value="Santé">
-                                  Santé (médicaments, consultations)
-                                </option>
-                                <option value="Éducation">
-                                  Éducation (frais de scolarité, livres)
-                                </option>
-                                <option value="Loisirs">
-                                  Loisirs (cinéma, sorties)
-                                </option>
-                                <option value="Shopping">
-                                  Shopping (vêtements, accessoires)
-                                </option>
-                                <option value="Épargne">Épargne</option>
-                                <option value="Dettes">
-                                  Remboursement de dettes
-                                </option>
-                                <option value="Donations">
-                                  Donations ou charité
-                                </option>
-                                <option value="Autre">Autre</option>
-                              </select>
                             </div>
 
                             <input
                               type="text"
                               class="form-control p-3"
-                              id="titre-input"
+                              id="revenu-titre-input"
                               required
                             />
                           </div>
                           <div class="mb-5 text-start">
-                            <label for="montant" class="form-label"
+                            <label for="revenuMontant" class="form-label"
                               >MONTANT</label
                             >
                             <input
                               type="number"
                               class="form-control p-3"
-                              id="montant"
+                              id="revenuMontant"
                               required
                             />
                           </div>
