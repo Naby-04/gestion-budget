@@ -77,18 +77,6 @@
           <tbody id="depense-table-body">
             <!-- Les lignes de données vont être insérées ici par JavaScript -->
             <tr>
-              <td>Nouriture</td>
-              <td>400000</td>
-              <td class="d-flex justify-content-around">
-                <button
-                  id="supp-btn"
-                  class="p-2 rounded-3 bg-danger text-light"
-                >
-                  supprimer
-                </button>
-              </td>
-            </tr>
-            <tr>
               <td>
                 <!-- Button trigger modal -->
                 <button
@@ -188,8 +176,9 @@
                       </div>
                       <div class="modal-footer">
                         <button
+                          id="add-depense"
                           type="button"
-                          class="btn btn-active"
+                          class="btn-active"
                           data-bs-dismiss="modal"
                         >
                           Submit
@@ -214,18 +203,7 @@
           </thead>
           <tbody id="revenu-table-body">
             <!-- Les lignes de données vont être insérées ici par JavaScript -->
-            <tr>
-              <td>Salaire</td>
-              <td>400000</td>
-              <td class="d-flex justify-content-around">
-                <button
-                  id="supp-btn"
-                  class="p-2 rounded-3 bg-danger text-light"
-                >
-                  supprimer
-                </button>
-              </td>
-            </tr>
+
             <tr>
               <td>
                 <!-- Button trigger modal -->
@@ -318,7 +296,12 @@
                         <!-- partie formulaire exit -->
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-active">
+                        <button
+                          id="add-revenu"
+                          type="button"
+                          class="btn btn-active"
+                          data-bs-dismiss="modal"
+                        >
                           Submit
                         </button>
                       </div>
