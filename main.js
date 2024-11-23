@@ -188,3 +188,14 @@ function resetRevenuForm() {
   revenuTitreInput.value = "";
   revenuMontantinput.value = "";
 }
+
+// fonction pour reset
+function resetAll() {
+  console.log("hello");
+  revenuData.splice(0);
+  depenseData.splice(0);
+  localStorage.setItem("revenus", JSON.stringify(revenuData));
+  localStorage.setItem("depenses", JSON.stringify(depenseData));
+  updateRevenuTableau();
+  updateDepenseTableau();
+}

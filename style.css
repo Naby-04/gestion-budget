@@ -38,6 +38,10 @@ a {
 #revenu-titre {
   /* display: none; */
 }
+.reset i {
+  border: none;
+  color: var(--text-white);
+}
 /*----------------------- formulaire -----------------------*/
 .logo {
   height: 150px;
