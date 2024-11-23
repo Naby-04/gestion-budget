@@ -15,6 +15,7 @@ const depenseTitreInput = document.getElementById("depense-titre-input");
 const depenseMontantinput = document.getElementById("depenseMontant");
 const addDepense = document.getElementById("add-depense");
 const depenseTableau = document.getElementById("depense-table-body");
+const rowAddDepense = document.getElementById("rowAddDepense");
 
 // fonction pour changement de titre
 if (selectedDepenseTitre && depenseTitreInput) {
@@ -47,124 +48,7 @@ function updateDepenseTableau() {
     `;
     depenseTableau.appendChild(row);
   });
-
-  const addRow = document.createElement("tr");
-  addRow.innerHTML = `
-  <td>
-                <!-- Button trigger modal -->
-                <button
-                  type="button"
-                  class="btn-active"
-                  data-bs-toggle="modal"
-                  data-bs-target="#depenseModal"
-                >
-                  AJOUTER DÉPENSE
-                  <i class="fa-solid fa-plus ms-2"></i>
-                </button>
-
-                <!-- Modal -->
-                <div
-                  class="modal fade"
-                  id="depenseModal"
-                  tabindex="-1"
-                  aria-labelledby="depenseModalLabel"
-                  aria-hidden="true"
-                >
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="depenseModalLabel">
-                          AJOUTER DÉPENSE
-                        </h1>
-                        <button
-                          type="button"
-                          class="btn-close"
-                          data-bs-dismiss="modal"
-                          aria-label="Close"
-                        ></button>
-                      </div>
-                      <div class="modal-body">
-                        <!-- partie formulaire -->
-                        <form id="depenseFormulaire">
-                          <div class="mb-3">
-                            <div class="d-flex">
-                              <label
-                                for="depense-titre-input"
-                                class="form-label me-2"
-                                >TITRE</label
-                              >
-                              <select name="depense-titre" id="depense-titre">
-                                <option value=""></option>
-                                <option value="Loyer">Loyer</option>
-                                <option value="Factures">
-                                  Factures (électricité, eau, internet, etc.)
-                                </option>
-                                <option value="Courses">
-                                  Courses alimentaires
-                                </option>
-                                <option value="Transport">Transport</option>
-                                <option value="Santé">
-                                  Santé (médicaments, consultations)
-                                </option>
-                                <option value="Éducation">
-                                  Éducation (frais de scolarité, livres)
-                                </option>
-                                <option value="Loisirs">
-                                  Loisirs (cinéma, sorties)
-                                </option>
-                                <option value="Shopping">
-                                  Shopping (vêtements, accessoires)
-                                </option>
-                                <option value="Épargne">Épargne</option>
-                                <option value="Dettes">
-                                  Remboursement de dettes
-                                </option>
-                                <option value="Donations">
-                                  Donations ou charité
-                                </option>
-                                <option value="Autre">Autre</option>
-                              </select>
-                            </div>
-
-                            <input
-                              type="text"
-                              class="form-control p-3"
-                              id="depense-titre-input"
-                              required
-                            />
-                          </div>
-                          <div class="mb-5 text-start">
-                            <label for="depenseMontant" class="form-label"
-                              >MONTANT</label
-                            >
-                            <input
-                              type="number"
-                              class="form-control p-3"
-                              id="depenseMontant"
-                              required
-                            />
-                          </div>
-                        </form>
-                        <!-- partie formulaire exit -->
-                      </div>
-                      <div class="modal-footer">
-                        <button
-                          id="add-depense"
-                          type="button"
-                          class="btn-active"
-                          data-bs-dismiss="modal"
-                        >
-                          Submit
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </td>
-              <td></td>
-              <td></td>
-  `;
-  depenseTableau.appendChild(addRow);
+  depenseTableau.appendChild(rowAddDepense);
 }
 
 // Fonction pour ajouter ou modifier une donnée
@@ -200,6 +84,7 @@ const revenuTitreInput = document.getElementById("revenu-titre-input");
 const revenuMontantinput = document.getElementById("revenuMontant");
 const addRevenu = document.getElementById("add-revenu");
 const revenuTableau = document.getElementById("revenu-table-body");
+const rowAddRevenu = document.getElementById("rowAddRevenu");
 
 // fonction pour changement de titre
 if (selectedRevenuTitre && revenuTitreInput) {
@@ -231,121 +116,7 @@ function updateRevenuTableau() {
     `;
     revenuTableau.appendChild(row);
   });
-  const addRow = document.createElement("tr");
-  addRow.innerHTML = `
-  <td>
-        <!-- Button trigger modal -->
-        <button
-          type="button"
-          class="btn-active"
-          data-bs-toggle="modal"
-          data-bs-target="#depenseModal"
-        >
-          AJOUTER DÉPENSE
-          <i class="fa-solid fa-plus ms-2"></i>
-      </button>
-      <!-- Modal -->
-      <div
-        class="modal fade"
-        id="depenseModal"
-        tabindex="-1"
-        aria-labelledby="depenseModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="depenseModalLabel">
-                AJOUTER DÉPENSE
-              </h1>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <!-- partie formulaire -->
-              <form id="depenseFormulaire">
-                <div class="mb-3">
-                  <div class="d-flex">
-                    <label
-                      for="depense-titre-input"
-                      class="form-label me-2"
-                      >TITRE</label
-                    >
-                    <select name="depense-titre" id="depense-titre">
-                      <option value=""></option>
-                      <option value="Loyer">Loyer</option>
-                      <option value="Factures">
-                        Factures (électricité, eau, internet, etc.)
-                      </option>
-                      <option value="Courses">
-                        Courses alimentaires
-                      </option>
-                      <option value="Transport">Transport</option>
-                      <option value="Santé">
-                        Santé (médicaments, consultations)
-                      </option>
-                      <option value="Éducation">
-                        Éducation (frais de scolarité, livres)
-                      </option>
-                      <option value="Loisirs">
-                        Loisirs (cinéma, sorties)
-                      </option>
-                      <option value="Shopping">
-                        Shopping (vêtements, accessoires)
-                      </option>
-                      <option value="Épargne">Épargne</option>
-                      <option value="Dettes">
-                        Remboursement de dettes
-                      </option>
-                      <option value="Donations">
-                        Donations ou charité
-                     </option>
-                     <option value="Autre">Autre</option>
-                   </select>
-                 </div>
-                 <input
-                   type="text"
-                   class="form-control p-3"
-                   id="depense-titre-input"
-                   required
-                 />
-               </div>
-               <div class="mb-5 text-start">
-                 <label for="depenseMontant" class="form-label"
-                   >MONTANT</label
-                 >
-                 <input
-                   type="number"
-                   class="form-control p-3"
-                   id="depenseMontant"
-                   required
-                 />
-               </div>
-             </form>
-             <!-- partie formulaire exit -->
-           </div>
-           <div class="modal-footer">
-             <button
-               id="add-depense"
-               type="button"
-               class="btn-active"
-               data-bs-dismiss="modal"
-             >
-               Submit
-             </button>
-           </div>
-         </div>
-       </div>
-     </div>
-   </td>
-   <td></td>
-   <td></td>
-  `;
-  revenuTableau.appendChild(addRow);
+  revenuTableau.appendChild(rowAddRevenu);
 }
 
 // Fonction pour ajouter ou modifier une donnée
@@ -356,10 +127,11 @@ if (addRevenu && revenuMontantinput && revenuTitreInput) {
       montant: revenuMontantinput.value,
     };
     revenuData.push(revenuDataItem);
-    console.table(depenseData);
+    console.table(revenuData);
     localStorage.setItem("revenus", JSON.stringify(revenuData));
     // reset
     resetRevenuForm();
+    updateRevenuTableau();
   });
 } else {
   console.log("impossible d'ajouter dans le tableau");
@@ -379,8 +151,6 @@ const revenu = document.getElementById("revenu-price");
 const depense = document.getElementById("dépense-price");
 const solde = document.getElementById("solde-price");
 const epargne = document.getElementById("epargne-price");
-// --------------------------AFFICHAGE
-// ---------------------------------------------------------------------------
 
 // gestion rapport budget
 function calculSolde(revenu, depense) {
@@ -389,6 +159,8 @@ function calculSolde(revenu, depense) {
 function calculRevenue(revenuMontant) {
   let revenue = 0;
 }
+
+// ---------------------------------------------------------------------------
 
 // gestion des valeurs
 
