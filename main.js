@@ -49,6 +49,7 @@ function updateDepenseTableau() {
     depenseTableau.appendChild(row);
   });
   depenseTableau.appendChild(rowAddDepense);
+  calculDonnées();
 }
 
 // Fonction pour ajouter ou modifier une donnée
@@ -117,6 +118,7 @@ function updateRevenuTableau() {
     revenuTableau.appendChild(row);
   });
   revenuTableau.appendChild(rowAddRevenu);
+  calculDonnées();
 }
 
 // Fonction pour ajouter ou modifier une donnée
@@ -153,11 +155,23 @@ const solde = document.getElementById("solde-price");
 const epargne = document.getElementById("epargne-price");
 
 // gestion rapport budget
-function calculSolde(revenu, depense) {
-  return revenu - depense;
-}
-function calculRevenue(revenuMontant) {
-  let revenue = 0;
+function calculDonnées() {
+  let revenuvalue = 0;
+  let depensevalue = 0;
+  let soldevalue = 0;
+
+  // recuperation des données
+  revenuData.forEach((revenu) => {
+    revenuvalue += parseFloat(revenu.montant) || 0;
+  });
+  depenseData.forEach((depense) => {
+    depensevalue += parseFloat(depense.montant) || 0;
+  });
+  soldevalue = revenuvalue - depensevalue;
+
+  revenu.textContent = revenuvalue + " FCFA";
+  depense.textContent = depensevalue + " FCFA";
+  solde.textContent = soldevalue + " FCFA";
 }
 
 // ---------------------------------------------------------------------------
