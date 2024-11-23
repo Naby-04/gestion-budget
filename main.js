@@ -152,7 +152,6 @@ function suppRevenuData(revenuIndex) {
 const revenu = document.getElementById("revenu-price");
 const depense = document.getElementById("dépense-price");
 const solde = document.getElementById("solde-price");
-const epargne = document.getElementById("epargne-price");
 
 // gestion rapport budget
 function calculDonnées() {
