@@ -58,7 +58,12 @@ select {
 label {
   font-size: 20px;
   font-weight: 700;
+  display: block;
   color: var(--primary-color);
+}
+#revenu-titre-input,
+#depense-titre-input {
+  border: none !important;
 }
 /*--------------- buttons ---------------*/
 .btn-active {

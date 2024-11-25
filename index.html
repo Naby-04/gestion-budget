@@ -112,12 +112,19 @@
                         <!-- partie formulaire -->
                         <form id="depenseFormulaire">
                           <div class="mb-3">
-                            <div class="d-flex">
-                              <label
-                                for="depense-titre-input"
-                                class="form-label me-2"
-                                >TITRE</label
-                              >
+                            <label
+                              for="depense-titre-input"
+                              class="form-label me-2 text-start"
+                              >TITRE</label
+                            >
+
+                            <div class="d-flex border p-1 rounded-3">
+                              <input
+                                type="text"
+                                class="form-control p-3"
+                                id="depense-titre-input"
+                                required
+                              />
                               <select name="depense-titre" id="depense-titre">
                                 <option value=""></option>
                                 <option value="Loyer">Loyer</option>
@@ -150,13 +157,6 @@
                                 <option value="Autre">Autre</option>
                               </select>
                             </div>
-
-                            <input
-                              type="text"
-                              class="form-control p-3"
-                              id="depense-titre-input"
-                              required
-                            />
                           </div>
                           <div class="mb-5 text-start">
                             <label for="depenseMontant" class="form-label"
@@ -240,29 +240,36 @@
                         <!-- partie formulaire -->
                         <form id="revenuFormulaire">
                           <div class="mb-3">
-                            <div class="d-flex">
-                              <label
-                                for="revenu-titre-input"
-                                class="form-label me-2"
-                                >TITRE</label
-                              >
+                            <label
+                              for="revenu-titre-input"
+                              class="form-label text-start"
+                              >TITRE</label
+                            >
+
+                            <div class="d-flex border rounded-3 p-1">
+                              <input
+                                type="text"
+                                class="form-control p-3"
+                                id="revenu-titre-input"
+                                required
+                              />
                               <select name="revenu-titre" id="revenu-titre">
                                 <option value=""></option>
                                 <option value="Salaire">Salaire</option>
                                 <option value="Bonus">Bonus</option>
-                                <option value="RevenusLocatifs">
+                                <option value="Revenus-Locatifs">
                                   Revenus Locatifs
                                 </option>
                                 <option value="Dividendes">Dividendes</option>
                                 <option value="Intérêts">
                                   Intérêts Bancaires
                                 </option>
-                                <option value="RevenusFreelance">
+                                <option value="Revenus-Freelance">
                                   Revenus Freelance
                                 </option>
                                 <option value="Pension">Pension</option>
                                 <option value="Allocation">Allocations</option>
-                                <option value="RevenusInvestissements">
+                                <option value="Revenus-Investissements">
                                   Revenus d'Investissements
                                 </option>
                                 <option value="Remboursement">
@@ -271,13 +278,6 @@
                                 <option value="Autre">Autre</option>
                               </select>
                             </div>
-
-                            <input
-                              type="text"
-                              class="form-control p-3"
-                              id="revenu-titre-input"
-                              required
-                            />
                           </div>
                           <div class="mb-5 text-start">
                             <label for="revenuMontant" class="form-label"
